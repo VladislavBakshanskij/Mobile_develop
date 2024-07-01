@@ -4,7 +4,7 @@ import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
     bundler: viteBundler(),
-    base: '/',
+    base: '/Mobile_develop/',
     theme: defaultTheme({
         navbar: [
             {
