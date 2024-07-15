@@ -32,10 +32,11 @@ jobs:
           node-version: 20
           # cache deps for pnpm
           cache: pnpm
+          cache-dependency-path: subdir/package-lock.json
 
       # run build script
       - name: Build VuePress site
-        run: pnpm docs:build
+        run: pnpm --dir mobilePress docs:build
 
       # please check out the docs of the workflow for more details
       # @see https://github.com/crazy-max/ghaction-github-pages
