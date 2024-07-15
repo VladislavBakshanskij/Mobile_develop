@@ -25,18 +25,18 @@ jobs:
           # install deps with pnpm
           run_install: true
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          # choose node.js version to use
-          node-version: 20
-          # cache deps for pnpm
-          cache: pnpm
-          cache-dependency-path: subdir/package-lock.json
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     # choose node.js version to use
+      #     node-version: 20
+      #     # cache deps for pnpm
+      #     cache: npm
+      #     cache-dependency-path: mobilePress/package-lock.json
 
       # run build script
       - name: Build VuePress site
-        run: pnpm --dir mobilePress docs:build
+        run: pnpm --dir mobilePress install && pnpm --dir mobilePress docs:build
 
       # please check out the docs of the workflow for more details
       # @see https://github.com/crazy-max/ghaction-github-pages
